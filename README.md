@@ -1,7 +1,7 @@
 # csc413-tankgame
 
-## Student Name  :
-## Student ID    :
+## Student Name  : Duy Nguyen
+## Student ID    : 917446249
 
 
 ## src folder is to be used for source code only.
