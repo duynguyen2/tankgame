@@ -1,5 +1,3 @@
-package src;
-
 import java.awt.*;
 import java.awt.image.BufferedImage;
 
@@ -11,7 +9,8 @@ public class PowerUp extends GameObject {
         this.y = y;
         this.rectangle = new Rectangle(x, y, 40, 40);
     }
-    static void setHealthIMG(BufferedImage healthIMG){
+
+    public static void setHealthIMG(BufferedImage healthIMG){
         PowerUp.healthIMG = healthIMG;
     }
 
@@ -22,5 +21,5 @@ public class PowerUp extends GameObject {
     public void collision(){ }
 
     @Override
-    public void drawImage(Graphics2D img) { img.drawImage(healthIMG, x, y, 40,40 , null); }
+    public void drawImage(Graphics2D g) { g.drawImage(healthIMG, x, y, 40,40 , null); }
 }

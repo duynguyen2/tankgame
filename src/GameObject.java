@@ -1,5 +1,3 @@
-package src;
-
 import java.awt.*;
 
 public abstract class GameObject {
@@ -9,7 +7,7 @@ public abstract class GameObject {
 
     public abstract void update();
     public abstract void collision();
-    public abstract void drawImage(Graphics2D img);
+    public abstract void drawImage(Graphics2D g);
 
     public void setX(int x) {
         this.x = x;

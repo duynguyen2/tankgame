@@ -1,5 +1,3 @@
-package src;
-
 import java.awt.*;
 import java.awt.image.BufferedImage;
 
@@ -25,10 +23,6 @@ public class BreakableWall extends Wall{
         }
         else
             this.durability -= damage;
-    }
-
-    public boolean isBroken() {
-        return this.broken;
     }
 
     public static void setBreakableWall(BufferedImage image) {

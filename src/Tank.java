@@ -1,5 +1,3 @@
-package src;
-
 import java.awt.*;
 import java.awt.geom.AffineTransform;
 import java.awt.image.BufferedImage;
@@ -156,9 +154,8 @@ public class Tank extends GameObject{
         if (this.RightPressed)
             this.rotateRight();
 
-        if (this.shootPressed && (System.currentTimeMillis() - lastFireTime > 1000)) {
-            Bullet bullet = new Bullet(x, y, angle);
-            bullet.setPlayerWhoFired(this.player);
+        if (this.shootPressed && System.currentTimeMillis() - lastFireTime > 750) {
+            Bullet bullet = new Bullet(x, y, angle, player);
             gameWorld.addGameObject(bullet);
             lastFireTime = System.currentTimeMillis();
         }

@@ -1,5 +1,3 @@
-package src;
-
 import java.awt.*;
 import java.awt.geom.AffineTransform;
 import java.awt.image.BufferedImage;
@@ -14,12 +12,13 @@ public class Bullet extends GameObject {
     static private BufferedImage explosionIMG;
     private int collisionIterations = 0;
 
-    public Bullet(int x, int y, int angle) {
+    public Bullet(int x, int y, int angle, String playerWhoFired) {
         this.x = x;
         this.y = y;
         this.vx = (int) Math.round(3 * Math.cos(Math.toRadians(angle)));
         this.vy = (int) Math.round(3 * Math.sin(Math.toRadians(angle)));
         this.angle = angle;
+        this.playerWhoFired = playerWhoFired;
         this.rectangle = new Rectangle(x, y, bulletIMG.getWidth(), bulletIMG.getHeight());
     }
 
@@ -33,10 +32,6 @@ public class Bullet extends GameObject {
 
     public String getPlayerWhoFired() {
         return this.playerWhoFired;
-    }
-
-    public void setPlayerWhoFired(String playerWhoFired) {
-        this.playerWhoFired = playerWhoFired;
     }
 
     public boolean activeCheck() { return this.active; }
@@ -72,13 +67,13 @@ public class Bullet extends GameObject {
             this.checkBorder();
         }
         else
-            collisionIterations++;
+            this.collisionIterations++;
 
         this.rectangle.setLocation(x,y);
     }
 
     @Override
-    public void collision() { collided = true; }
+    public void collision() { this.collided = true; }
 
     @Override
     public void drawImage(Graphics2D g) {
