@@ -31,6 +31,8 @@ public class GameWorld extends JPanel {
     private int player1Lives = 3;
     private int player2Lives = 3;
     static boolean gameOver = false;
+    private static String winner;
+    private static BufferedImage player1winner, player2winner;
 
     public static void main(String[] args) {
         GameWorld tankGame = new GameWorld();
@@ -47,6 +49,7 @@ public class GameWorld extends JPanel {
                                 if (tankGame.player1Lives < 2) {
                                     tankGame.player1Lives = 0;
                                     gameOver = true;
+                                    winner = "player2";
                                     break;
                                 } else {
                                     tankGame.player1Lives--;
@@ -61,6 +64,7 @@ public class GameWorld extends JPanel {
                                 if (tankGame.player2Lives < 2) {
                                     tankGame.player2Lives = 0;
                                     gameOver = true;
+                                    winner = "player1";
                                     break;
                                 } else {
                                     tankGame.player2Lives--;
@@ -122,6 +126,9 @@ public class GameWorld extends JPanel {
 
             PowerUp.setHealthIMG(ImageIO.read(getClass().getResource("/Shield1.gif")));
 
+            player1winner = ImageIO.read(getClass().getResource("/player1wins.png"));
+            player2winner = ImageIO.read(getClass().getResource("/player2wins.png"));
+
             this.tank1 = new Tank(Tank1XSpawn, Tank1YSpawn, 0, 0, Tank1AngleSpawn, tank);
             this.tank1.setPlayer("Player1");
             this.tank2 = new Tank(Tank2XSpawn, Tank2YSpawn, 0, 0, Tank2AngleSpawn, tank);
@@ -159,7 +166,7 @@ public class GameWorld extends JPanel {
         this.gameObjects.add(this.tank2);
         this.tank2.setGameWorld(this);
 
-        PowerUp power1 = new PowerUp(204, 800), power2 = new PowerUp(608, 800), power3 = new PowerUp(1012, 800);
+        PowerUp power1 = new PowerUp(204, 800), power2 = new PowerUp(608, 800), power3 = new PowerUp(948, 800);
         this.gameObjects.add(power1);
         this.gameObjects.add(power2);
         this.gameObjects.add(power3);
@@ -223,12 +230,19 @@ public class GameWorld extends JPanel {
         g1.setFont(new Font("Dialog", Font.PLAIN, 20));
         g1.setColor(Color.WHITE);
 
-        g1.drawString("Player 1's Lives: " + this.player1Lives, 10, 28);
-        g1.drawString("Player 2's Lives: " + this.player2Lives, SCREEN_WIDTH / 2 + 10, 28);
+        g1.drawString("Player 1       Lives: " + this.player1Lives, 10, 28);
+        g1.drawString("Player 2       Lives: " + this.player2Lives, SCREEN_WIDTH / 2 + 10, 28);
 
         g1.setColor(Color.green);
 
         g1.fillRect(10, 30, 2 * tank1.getHealth(), 10);
         g1.fillRect(SCREEN_WIDTH / 2 + 10, 30, 2 * tank2.getHealth(), 10);
+
+        if (winner == "player1") {
+            g1.drawImage(player1winner, 0, 0, SCREEN_WIDTH, SCREEN_HEIGHT, null);
+        }
+        else if (winner == "player2") {
+            g1.drawImage(player2winner, 0, 0, SCREEN_WIDTH, SCREEN_HEIGHT, null);
+        }
     }
 }

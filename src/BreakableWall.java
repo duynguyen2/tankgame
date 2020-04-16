@@ -16,28 +16,26 @@ public class BreakableWall extends Wall{
         return this.durability;
     }
 
-    private void removeHealth(int damage) {
-        if (this.durability - damage <= 0) {
-            this.durability = 0;
-            this.broken = true;
-        }
-        else
-            this.durability -= damage;
-    }
-
     public static void setBreakableWall(BufferedImage image) {
         BreakableWall.breakableWallIMG = image;
     }
 
     @Override
-    public void update() { }
+    public void update() {
+        if (this.durability - 34 <= 0) {
+            this.durability = 0;
+            this.broken = true;
+        }
+        else
+            this.durability -= 34;
+    }
 
     @Override
-    public void collision() { this.removeHealth(34); }
+    public void collision() { this.update(); }
 
     @Override
-    public void drawImage(Graphics2D img) {
+    public void drawImage(Graphics2D g) {
         if (!broken)
-            img.drawImage(breakableWallIMG, x, y, null);
+            g.drawImage(breakableWallIMG, x, y, null);
     }
 }

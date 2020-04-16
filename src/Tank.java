@@ -107,14 +107,14 @@ public class Tank extends GameObject{
         if (x < 30)
             x = 30;
 
-        if (x >= GameWorld.WORLD_WIDTH - 88)
-            x = GameWorld.WORLD_WIDTH - 88;
+        if (x >= GameWorld.WORLD_WIDTH - 80)
+            x = GameWorld.WORLD_WIDTH - 80;
 
         if (y < 40)
             y = 40;
 
-        if (y >= GameWorld.WORLD_HEIGHT - 80)
-            y = GameWorld.WORLD_HEIGHT - 80;
+        if (y >= GameWorld.WORLD_HEIGHT - 60)
+            y = GameWorld.WORLD_HEIGHT - 60;
 
     }
 
@@ -165,7 +165,7 @@ public class Tank extends GameObject{
 
     @Override
     public void collision() {
-        this.health -= 10;
+        this.health -= 20;
     }
 
     @Override

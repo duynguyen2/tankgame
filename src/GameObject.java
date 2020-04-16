@@ -26,7 +26,7 @@ public abstract class GameObject {
     }
 
     public int getVx() {
-        return vx;
+        return this.vx;
     }
 
     public void setVx(int vx) {
@@ -34,7 +34,7 @@ public abstract class GameObject {
     }
 
     public int getVy() {
-        return vy;
+        return this.vy;
     }
 
     public void setVy(int vy) {
@@ -42,7 +42,7 @@ public abstract class GameObject {
     }
 
     public int getAngle() {
-        return angle;
+        return this.angle;
     }
 
     public void setAngle(int angle) {

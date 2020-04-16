@@ -51,6 +51,7 @@ public class Collision {
                     else if (obj1 instanceof Tank && obj2 instanceof PowerUp) {
                         if (obj1.rectangle.intersects(obj2.rectangle)) {
                             ((Tank) obj1).setHealth(100);
+                            System.out.println("Health picked up by " + ((Tank) obj1).getPlayer());
                             gameObjects.remove(j);
                         }
                     }
