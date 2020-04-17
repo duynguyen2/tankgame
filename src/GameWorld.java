@@ -36,8 +36,8 @@ public class GameWorld extends JPanel {
 
     public static void main(String[] args) {
         GameWorld tankGame = new GameWorld();
-        tankGame.collisions = new Collision();
         tankGame.init();
+        tankGame.collisions = new Collision();
         try {
             while (!gameOver) {
                 tankGame.repaint();
@@ -79,18 +79,17 @@ public class GameWorld extends JPanel {
                     }
 
                     if (tankGame.gameObjects.get(i) instanceof Bullet) {
-                        if (((Bullet) tankGame.gameObjects.get(i)).activeCheck()) {
-                            tankGame.gameObjects.remove(i);
-                            i--;
-                        }
+                        if (((Bullet) tankGame.gameObjects.get(i)).activeCheck())
+                            tankGame.gameObjects.remove(i--);
+
                         else
                             tankGame.gameObjects.get(i).update();
 
                     }
 
-                    if (((tankGame.gameObjects.get(i) instanceof BreakableWall) && ((BreakableWall) tankGame.gameObjects.get(i)).getDurability() == 0)) {
+                    if (((tankGame.gameObjects.get(i) instanceof BreakableWall) && ((BreakableWall) tankGame.gameObjects.get(i)).getDurability() == 0))
                         tankGame.gameObjects.remove(i);
-                    }
+
                 }
                 tankGame.gameObjects = tankGame.collisions.collide(tankGame.gameObjects);
                 tankGame.tank1.update();
@@ -118,7 +117,7 @@ public class GameWorld extends JPanel {
             breakableWall = ImageIO.read(getClass().getResource("/Wall1.gif"));
             BreakableWall.setBreakableWall(breakableWall);
 
-            bullet = ImageIO.read(getClass().getResource("/Weapon.gif"));
+            bullet = ImageIO.read(getClass().getResource("/Shell.gif"));
             Bullet.setBufferedImage(bullet);
 
             explosion = ImageIO.read(getClass().getResource("/Explosion_small.gif"));
@@ -200,8 +199,8 @@ public class GameWorld extends JPanel {
         int player1X = tank1.getX(), player2X = tank2.getX();
         int player1Y = tank1.getY(), player2Y = tank2.getY();
 
-        if (player1X < SCREEN_WIDTH / 2)
-            player1X = SCREEN_WIDTH / 2;
+        if (player1X < SCREEN_WIDTH / 4)
+            player1X = SCREEN_WIDTH / 4;
         else if (player1X > WORLD_WIDTH - SCREEN_WIDTH / 2)
             player1X = WORLD_WIDTH - SCREEN_WIDTH / 2;
 
@@ -210,8 +209,8 @@ public class GameWorld extends JPanel {
         else if (player1Y > WORLD_HEIGHT - SCREEN_HEIGHT / 2)
             player1Y = WORLD_HEIGHT - SCREEN_HEIGHT / 2;
 
-        if (player2X < SCREEN_WIDTH / 2)
-            player2X = SCREEN_WIDTH / 2;
+        if (player2X < SCREEN_WIDTH / 4)
+            player2X = SCREEN_WIDTH / 4;
         else if (player2X > WORLD_WIDTH - SCREEN_WIDTH / 2)
             player2X = WORLD_WIDTH - SCREEN_WIDTH / 2;
 
@@ -234,7 +233,6 @@ public class GameWorld extends JPanel {
         g1.drawString("Player 2       Lives: " + this.player2Lives, SCREEN_WIDTH / 2 + 10, 28);
 
         g1.setColor(Color.green);
-
         g1.fillRect(10, 30, 2 * tank1.getHealth(), 10);
         g1.fillRect(SCREEN_WIDTH / 2 + 10, 30, 2 * tank2.getHealth(), 10);
 
