@@ -201,8 +201,8 @@ public class GameWorld extends JPanel {
 
         if (player1X < SCREEN_WIDTH / 4)
             player1X = SCREEN_WIDTH / 4;
-        else if (player1X > WORLD_WIDTH - SCREEN_WIDTH / 2)
-            player1X = WORLD_WIDTH - SCREEN_WIDTH / 2;
+        else if (player1X > WORLD_WIDTH - SCREEN_WIDTH / 4)
+            player1X = WORLD_WIDTH - SCREEN_WIDTH / 4;
 
         if (player1Y < SCREEN_HEIGHT / 2)
             player1Y = SCREEN_HEIGHT / 2;
@@ -211,8 +211,8 @@ public class GameWorld extends JPanel {
 
         if (player2X < SCREEN_WIDTH / 4)
             player2X = SCREEN_WIDTH / 4;
-        else if (player2X > WORLD_WIDTH - SCREEN_WIDTH / 2)
-            player2X = WORLD_WIDTH - SCREEN_WIDTH / 2;
+        else if (player2X > WORLD_WIDTH - SCREEN_WIDTH / 4)
+            player2X = WORLD_WIDTH - SCREEN_WIDTH / 4;
 
         if (player2Y < SCREEN_HEIGHT / 2)
             player2Y = SCREEN_HEIGHT / 2;
