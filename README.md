@@ -14,6 +14,8 @@ The IDE this was made on was IntelliJ. It was made with java version 12 with the
 
 To run the game, ensure that the folders are correctly marked by hitting file and checking the project structure. The resources file should be marked as Resources and the src folder should be marked as Sources. Ideally, also check that the Project compiler output is set to the out folder's file path in the project folder, or wherever works best for you. If everything is already fine, to actually run the game, open the jar folder and run the jar file by right-clicking it and selecting the run option or hitting the play button or open the src folder and select the GameWorld file and run it by doing the same thing.
 
+Alternatively, you can open the command line and change directories to where the jar file is located and run the jar that way, with the command: java -jar csc413-tankgame-duynguyen2.jar
+
 ## How to play:
 Player 1[Left Screen] Controls: W, A, S, D for movement and Q to fire.
 Player 2[Right Screen] Controls: Arrow keys for movement and ENTER to fire.
