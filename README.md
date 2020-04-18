@@ -10,7 +10,7 @@
 
 ## jar folder is used to store the built jar of your term-project. NO SOURCE CODE SHOULD BE IN THIS FOLDER. DOING SO WILL CAUSE POINTS TO BE DEDUCTED
 
-The IDE this was made on was IntelliJ. It was made with java version 1.8.0_251 and project SDK 12, with the project language level set at 12 or 1.8.0_251 works as well. The working directory is the src folder, which contains all the classes and files that contain the code.
+The IDE this was made on was IntelliJ. It was made with java version 12 with the project language level set at 12. The working directory is the src folder, which contains all the classes and files that contain the code.
 
 To run the game, ensure that the folders are correctly marked by hitting file and checking the project structure. The resources file should be marked as Resources and the src folder should be marked as Sources. Ideally, also check that the Project compiler output is set to the out folder's file path in the project folder, or wherever works best for you. If everything is already fine, to actually run the game, open the jar folder and run the jar file by right-clicking it and selecting the run option or hitting the play button or open the src folder and select the GameWorld file and run it by doing the same thing.
 
