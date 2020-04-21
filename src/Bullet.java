@@ -14,8 +14,6 @@ public class Bullet extends GameObject {
 
     public Bullet(int x, int y, int angle, String playerWhoFired) {
         super(x, y);
-        this.x = x;
-        this.y = y;
         this.vx = (int) Math.round(3 * Math.cos(Math.toRadians(angle)));
         this.vy = (int) Math.round(3 * Math.sin(Math.toRadians(angle)));
         this.angle = angle;

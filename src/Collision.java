@@ -12,8 +12,7 @@ public class Collision {
 
                 if (i != j) {
                     if (obj1 instanceof Tank && obj2 instanceof Tank) {
-                        Rectangle rectangle1 = ((Tank) obj1).checkOffsetBounds();
-                        Rectangle rectangle2 = (((Tank) obj2).checkOffsetBounds());
+                        Rectangle rectangle1 = ((Tank) obj1).checkOffsetBounds(), rectangle2 = (((Tank) obj2).checkOffsetBounds());
                         if (rectangle1.intersects(obj2.rectangle))
                             ((Tank) obj1).setCollision(true);
                         if (rectangle2.intersects(obj1.rectangle))
