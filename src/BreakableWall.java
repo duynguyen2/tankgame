@@ -7,8 +7,7 @@ public class BreakableWall extends Wall{
     private static BufferedImage breakableWallIMG;
 
     public BreakableWall(int x, int y) {
-        this.x = x;
-        this.y = y;
+        super(x, y);
         this.rectangle = new Rectangle(x, y, breakableWallIMG.getWidth(), breakableWallIMG.getHeight());
     }
 

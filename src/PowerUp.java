@@ -5,8 +5,7 @@ public class PowerUp extends GameObject {
     static private BufferedImage healthIMG;
 
     public PowerUp(int x, int y){
-        this.x = x;
-        this.y = y;
+        super(x, y);
         this.rectangle = new Rectangle(x, y, 40, 40);
     }
 

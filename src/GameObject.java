@@ -9,6 +9,11 @@ public abstract class GameObject {
     public abstract void collision();
     public abstract void drawImage(Graphics2D g);
 
+    GameObject(int x, int y) {
+        this.x = x;
+        this.y = y;
+    }
+
     public void setX(int x) {
         this.x = x;
     }

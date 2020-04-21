@@ -13,6 +13,7 @@ public class Bullet extends GameObject {
     private int collisionIterations = 0;
 
     public Bullet(int x, int y, int angle, String playerWhoFired) {
+        super(x, y);
         this.x = x;
         this.y = y;
         this.vx = (int) Math.round(3 * Math.cos(Math.toRadians(angle)));

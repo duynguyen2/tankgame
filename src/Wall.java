@@ -2,7 +2,9 @@ import java.awt.*;
 
 public class Wall extends GameObject {
 
-    public Wall() {}
+    public Wall(int x, int y) {
+        super(x, y);
+    }
 
     @Override
     public void update() { }

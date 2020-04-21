@@ -5,8 +5,7 @@ public class UnbreakableWall extends Wall{
     private static BufferedImage unbreakableWallIMG;
 
     public UnbreakableWall(int x, int y) {
-        this.x = x;
-        this.y = y;
+        super(x, y);
         this.rectangle = new Rectangle(x, y, unbreakableWallIMG.getWidth(), unbreakableWallIMG.getHeight());
     }
 

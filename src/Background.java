@@ -5,8 +5,7 @@ public class Background extends Wall {
     private static BufferedImage backgroundIMG;
 
     public Background(int x, int y) {
-        this.x = x;
-        this.y = y;
+        super(x, y);
     }
 
     public static void setBackgroundImage(BufferedImage image) {

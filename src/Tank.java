@@ -28,8 +28,7 @@ public class Tank extends GameObject{
     private String player;
 
     Tank(int x, int y, int vx, int vy, int angle, BufferedImage tankImage) {
-        this.x = x;
-        this.y = y;
+        super(x, y);
         this.vx = vx;
         this.vy = vy;
         this.tankImage = tankImage;
